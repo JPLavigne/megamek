@@ -195,6 +195,8 @@ public class Server implements Runnable {
 
     private MapSettings mapSettings = MapSettings.getInstance();
 
+    private Standings standings = new Standings();
+
     // commands
     private Hashtable<String, ServerCommand> commandsHash = new Hashtable<>();
 
@@ -1025,6 +1027,8 @@ public class Server implements Runnable {
         newPlayer.setCamouflage(new Camouflage(Camouflage.COLOUR_CAMOUFLAGE, colour.name()));
         newPlayer.setTeam(Math.min(team, 5));
         game.addPlayer(connId, newPlayer);
+        standings.addPlayer(newPlayer.getName());
+
         validatePlayerInfo(connId);
         return newPlayer;
     }
@@ -2953,6 +2957,14 @@ public class Server implements Runnable {
             case VICTORY:
                 GameVictoryEvent gve = new GameVictoryEvent(this, game);
                 game.processGameEvent(gve);
+                 VictoryResult vr = game.getVictoryResult();
+
+                 standings.updateStandings(game.getPlayers(),vr);
+
+                 //niveau elo :  1, 6, 7, 8
+                // ordre attendu: 4,3,2,1
+                // ordre final: 2, 1, 3, 4,
+
                 transmitGameVictoryEventToAll();
                 resetGame();
                 break;
