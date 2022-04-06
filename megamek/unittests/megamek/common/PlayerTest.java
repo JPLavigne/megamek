@@ -2,6 +2,7 @@ package megamek.common;
 
 import megamek.client.ui.swing.util.PlayerColour;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -24,13 +25,14 @@ public class PlayerTest {
     }
 
 
+    // Test Setter and getter
     @org.junit.jupiter.api.Test
-    void getEloScore() {
+    void TestEloScore() {
+        double eloScore = 5;
+        Player player = new Player(0, "test");
+        player.setEloScore(5);
+        Assertions.assertEquals(5, player.getEloScore());
 
-        
     }
 
-    @org.junit.jupiter.api.Test
-    void setEloScore() {
-    }
 }
