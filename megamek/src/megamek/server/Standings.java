@@ -56,7 +56,7 @@ public class Standings {
     }
 
     // accesseur de la liste de joueurs dans leur ordre durant le tournois
-    public List<String> getStandings(Enumeration<Player> players){
+    public List<String> getStandings(){
 
         return standingsEntries.getStandings();
     }
