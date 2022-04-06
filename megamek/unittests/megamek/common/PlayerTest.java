@@ -23,4 +23,14 @@ public class PlayerTest {
 
     }
 
+
+    @org.junit.jupiter.api.Test
+    void getEloScore() {
+
+        
+    }
+
+    @org.junit.jupiter.api.Test
+    void setEloScore() {
+    }
 }

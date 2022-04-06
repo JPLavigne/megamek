@@ -42,6 +42,16 @@ public final class Player extends TurnOrdered {
     private String email;
     private int id;
 
+    public int getEloScore() {
+        return eloScore;
+    }
+
+    public void setEloScore(int eloScore) {
+        this.eloScore = eloScore;
+    }
+
+    private int eloScore;
+
     private int team = TEAM_NONE;
 
     private boolean done = false; // done with phase
