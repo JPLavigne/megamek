@@ -3,6 +3,9 @@ package megamek.server;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StandingsEntriesTest {
@@ -14,12 +17,15 @@ class StandingsEntriesTest {
 
         st.addPlayer("Bob");
 
-        Assertions.As
+        Assertions.assertEquals(1, st.getStandings().size());
 
     }
 
     @Test
     void getStandings() {
+        StandingsEntries st =  new StandingsEntries();
+
+        assertTrue(st.getStandings() instanceof List<StandingsEntry>)
     }
 
     @Test

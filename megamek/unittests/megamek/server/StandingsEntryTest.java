@@ -8,7 +8,7 @@ class StandingsEntryTest {
 
     @Test
     void compareTo() {
-        
+
     }
 
     @Test
