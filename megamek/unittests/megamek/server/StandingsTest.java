@@ -1,20 +1,20 @@
 package megamek.server;
 
 import megamek.common.Player;
-import megamek.common.options.GameOptions;
-import megamek.server.victory.Victory;
-import megamek.server.victory.VictoryResult;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StandingsTest {
+@RunWith(value = JUnit4.class)
+public class StandingsTest {
 
     @Test
-    void addPlayer() {
+    public void addPlayer() {
         Standings st = new Standings();
         String player = "Bob";
         st.addPlayer(player);
@@ -23,7 +23,7 @@ class StandingsTest {
     }
 
     @Test
-    void updateStandings() {
+    public void updateStandings() {
         Standings st = new Standings();
         String playerOne = "Alice";
         String playerTwo = "Bob";
@@ -38,7 +38,7 @@ class StandingsTest {
     }
 
     @Test
-    void getStandings() {
+    public void getStandings() {
         Standings st = new Standings();
         String player = "Bob";
         st.addPlayer(player);

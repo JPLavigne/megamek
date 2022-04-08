@@ -44,6 +44,8 @@ public class StandingsEntries {
         return standingsEntryFound.getEloScore();
     }
 
+    // recoit la liste de l'ordre prevu et final
+    // doit mettre a jour chaque player qui se trouve dans le stading
     public void updateStandingEntries(List<Player> prevu, List<Player> reel){
 
         for(int i =0; i < prevu.size();i++){

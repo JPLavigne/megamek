@@ -25,14 +25,4 @@ public class PlayerTest {
     }
 
 
-    // Test Setter and getter
-    @org.junit.jupiter.api.Test
-    void TestEloScore() {
-        double eloScore = 5;
-        Player player = new Player(0, "test");
-        player.setEloScore(5);
-        Assertions.assertEquals(5, player.getEloScore());
-
-    }
-
 }

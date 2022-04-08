@@ -2,18 +2,20 @@ package megamek.server;
 
 import megamek.common.Player;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StandingsEntriesTest {
+@RunWith(value = JUnit4.class)
+public class StandingsEntriesTest {
 
-    @org.junit.jupiter.api.Test
-    void TestaddPlayerNotAlreadyinStanding() {
+    @Test
+    public void TestaddPlayerNotAlreadyinStanding() {
 
         StandingsEntries st = new StandingsEntries();
 
@@ -23,8 +25,8 @@ class StandingsEntriesTest {
 
     }
 
-    @org.junit.jupiter.api.Test
-    void TestaddPlayerAlreadyinStanding() {
+    @Test
+    public void TestaddPlayerAlreadyinStanding() {
 
         StandingsEntries st = new StandingsEntries();
 
@@ -37,7 +39,7 @@ class StandingsEntriesTest {
 
 
     @Test
-    void getEloByName() {
+    public void getEloByName() {
         StandingsEntries st = new StandingsEntries();
         st.addPlayer("Bob");
         assertEquals(10, st.getEloByName("Bob"));
@@ -45,8 +47,9 @@ class StandingsEntriesTest {
     }
 
     @Test
-    void updateStandingEntries() {
+    public void updateStandingEntries() {
         StandingsEntries st = new StandingsEntries();
+
 
         Player p1 = new Player(1, "Bob");
         Player p2 = new Player(2, "Benoit");
@@ -67,7 +70,11 @@ class StandingsEntriesTest {
             }
         };
 
+        st.addPlayer(p1.getName());
+        st.addPlayer(p2.getName());
+        st.addPlayer(p3.getName());
+
         st.updateStandingEntries(prevu, reel);
-        assertEquals(7, st.getEloByName("Geeks"));
+        assertEquals(12, st.getEloByName("Geeks"));
     }
 }
